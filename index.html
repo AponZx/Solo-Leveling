@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solo Leveling — Ninja Training</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="epic_ninja_loop.mp3" type="audio/mp3" />
+  </audio>
+
+  <!-- Mute/Unmute Button -->
+  <button id="musicToggle">🔊</button>
+
+  <!-- Auth Section -->
+  <section id="auth">
+    <h1>Solo Leveling — Ninja Training</h1>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <div class="auth-buttons">
+      <button onclick="register()">Register</button>
+      <button onclick="login()">Login</button>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dash" class="hidden">
+    <h1>Solo Leveling — Ninja Training</h1>
+
+    <div class="topbar">
+      <div>
+        Hunter Name: <input type="text" id="hunterNameInput" maxlength="12" placeholder="Set your hunter name" />
+        <button id="saveHunterNameBtn">Save</button>
+      </div>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <div class="avatar-wrapper">
+      <div id="user-avatar" class="avatar"></div>
+    </div>
+
+    <div class="dashboard">
+      <div class="stats">
+        <div class="card">
+          <h3>XP</h3>
+          <p><span id="xp">0</span> / <span id="nextXp">100</span></p>
+          <div class="xp-progress-wrapper">
+            <div class="xp-label">
+              <span id="xp-progress-text">XP: 0 / 0 to next rank</span>
+            </div>
+            <div class="xp-bar-bg">
+              <div id="xp-bar-fill" class="xp-bar-fill"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Rank</h3>
+          <div id="rankBadge" class="rank-badge">F</div>
+        </div>
+        <div class="card">
+          <h3>Tasks Done</h3>
+          <p id="questsDone">0</p>
+        </div>
+      </div>
+
+      <ul id="questBoard" class="quest-board">
+        <!-- Tasks will be injected here -->
+      </ul>
+    </div>
+
+    <!-- Leaderboard -->
+    <section id="leaderboard-section">
+      <h2>Top 10 Hunters Leaderboard</h2>
+      <table id="leaderboard-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Avatar</th>
+            <th>Name</th>
+            <th>Rank</th>
+            <th>XP</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <!-- Leaderboard entries inserted here -->
+        </tbody>
+      </table>
+    </section>
+  </section>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
